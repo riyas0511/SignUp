@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="C:\Users\nikhi\OneDrive\Desktop\KrishiLink\components\logo.png" type="image/x-icon">
+   <title>SignUp/Login</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <div class="form">
+      <ul class="tab-group">
+         <li class="tab active"><a href="#signup">Sign Up</a></li>
+         <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+
+      <div class="tab-content">
+         <div id="signup" class="tab-pane active">
+               <h1>Sign Up for Free Now!</h1>
+               <form action="" method="post">
+                  <div class="top-row">
+                     <div class="field-wrap">
+                           <label for="fname" value="fname" >First Name<span class="req">*</span></label>
+                           <input type="text" id="fname" required autocomplete="off" />
+                     </div>
+                     <div class="field-wrap">
+                           <label for="middle-name" value="mname">Middle Name</label>
+                           <input type="text" id="middle-name"/>
+                     </div>
+                     <div class="field-wrap">
+                           <label for="last-name" value="lname">Last Name<span class="req">*</span></label>
+                           <input type="text" id="last-name" required autocomplete="off" />
+                     </div>
+                  </div>
+                  <div class="field-wrap">
+                     <label for="dob" value="dob">Date of Birth<span class="req">*</span></label>
+                     <input type="date" id="dob" required autocomplete="off"/>
+                  </div>
+                  <div class="field-wrap">    
+                     <label for="gender" value="gender">Gender<span class="req">*</span></label>
+                     <select name="gender" id="gender">
+                           <option value="select">Select</option>
+                           <option value="male">Male</option>
+                           <option value="female">Female</option>
+                           <option value="trans">Trans</option>
+                     </select>
+                  </div>
+                  <div class="field-wrap">
+                     <label for="email" vlaue="email">Email Address</label>
+                     <input type="email" id="email">
+                     <label for="phone" value="number" placeholder="+91">Phone Number<span class="req">*</span></label>
+                     <input type="tel" id="phone">    
+                  </div>
+                  <div class="field-wrap">
+                     <label for="state" value="state">Select State<span class="req">*</span></label>
+                     <select name="state" id="state">
+                           <option value="">Select</option>
+                           <option value="AP">Andhra Pradesh</option>
+                           <option value="AR">Arunachal Pradesh</option>
+                           <option value="BR">Bihar</option>
+                           <option value="CT">Chhattisgarh</option>
+                           <option value="GA">Goa</option>
+                           <option value="GJ">Gujarat</option>
+                           <option value="HR">Haryana</option>
+                           <option value="HP">Himachal Pradesh</option>
+                           <option value="JH">Jharkhand</option>
+                           <option value="KA">Karnataka</option>
+                           <option value="KL">Kerala</option>
+                           <option value="MP">Madhya Pradesh</option>
+                           <option value="MH">Maharashtra</option>
+                           <option value="MN">Manipur</option>
+                           <option value="ML">Meghalaya</option>
+                           <option value="MZ">Mizoram</option>
+                           <option value="NL">Nagaland</option>
+                           <option value="OD">Odisha</option>
+                           <option value="PB">Punjab</option>
+                           <option value="RJ">Rajasthan</option>
+                           <option value="SK">Sikkim</option>
+                           <option value="TN">Tamil Nadu</option>
+                           <option value="TG">Telangana</option>
+                           <option value="TR">Tripura</option>
+                           <option value="UP">Uttar Pradesh</option>
+                           <option value="UT">Uttarakhand</option>
+                           <option value="WB">West Bengal</option>
+                           <option value="AN">Andaman and Nicobar Islands</option>
+                           <option value="CH">Chandigarh</option>
+                           <option value="DN">Dadra and Nagar Haveli and Daman and Diu</option>
+                           <option value="LD">Lakshadweep</option>
+                           <option value="DL">Delhi</option>
+                           <option value="PY">Puducherry</option>
+                           <option value="LA">Ladakh</option>
+                           <option value="JK">Jammu and Kashmir</option>
+                           <option value="AS">Assam</option>
+                     </select>
+                  </div>
+                  <div class="field-wrap">
+                     <label for="address" value="address">Address<span class="req">*</span></label>
+                     <input type="text" id="address">
+                     <label for="pincode" value="pincode">Area Pincode <span class="req">*</span></label>
+                     <input type="text" id="pincode">
+                  </div>
+                  <div class="upload-container">
+                     <form action="" method="post" enctype="multipart/form-data">
+                           <label for="fileUpload" class="upload-label" value="file-upload">Choose a valid Government Id: </label>
+                           <select name="id" id="gid">
+                              <option value="select">select</option>
+                              <option value="aadhar">Aadhar</option>
+                              <option value="pan">PAN Card</option>
+                              <option value="voter">Voter Id</option>
+                              <option value="ration">Ration Card</option>
+                              <option value="driving-license">Driving License</option>
+                              <option value="other">Other</option>
+                           </select>
+                           <input type="text" class="idno" placeholder="Enter Government Id number"><br><br>
+                           <input type="file" id="fileUpload" name="fileUpload" class="upload-input">
+                           <button type="submit" class="upload-button">Upload</button>
+                     </form>
+                  </div>
+                  <div class="field-wrap">
+                     <label for="password" value="password">Set a Password <span class="req">*</span></label>
+                     <input type="password" id="password" required autocomplete="off"/>
+                  </div>
+                  <button type="submit" class="button" value="submit">Get Started</button>
+               </form>
+         </div>
+         <div id="login" class="tab-pane">
+               <h1>Welcome Back</h1>
+               <form action="/" method="post">
+                  <div class="field-wrap">
+                     <label for="email-or-phone">Email Address or Phone number</label>
+                     <input type="text" id="email-or-phone" required>
+                  </div>
+                  <div class="field-wrap">
+                     <label for="login-password">Password <span class="req">*</span></label>
+                     <input type="password" id="login-password" required>
+                  </div>
+                  <p class="forget"><a href="#">Forget Password</a></p>
+                  <button class="button">Log In</button>
+                  <p><b id="opt"> OR</b></p>
+                  <button type="button" class="button" id="otp-login">Log In with OTP</button>
+               </form>
+         </div>
+      </div>
+   </div>
+   <script src="engine.js"></script>
+
+   <div id="otp-container"></div>
+
+<!-- Babel for JSX -->
+   <script type="text/babel">
+      const PhoneOtpForm = () => {
+         const [phoneNumber , setPhoneNumber] = React.useState("");
+         const [showotpInput , setshowOtpInput] = React.useState(false);
+
+         const handlePhoneNumber = (event) => { 
+            setPhoneNumber(event.target.value);
+         };
+
+         const handlePhoneSubmit = (event) => { 
+            event.preventDefault();
+
+            // phone validations
+
+            const regex =/[^0-9]/g;
+            if(phoneNumber.length<10 || phoneNumber.length>10|| regex.test(phoneNumber)){
+                  alert("Invalid Phone Number");
+                  return;
+            }
+
+            //call backend API
+            //show otp field
+            setshowOtpInput(true);
+         };
+         const onOtpSubmit = (otp) => { 
+            console.log("Login Successfull !",otp)
+         }
+      return <div  style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
+         { !showotpInput? <form onSubmit={handlePhoneSubmit}>
+                  <input 
+                     type="text"  
+                     value={phoneNumber}
+                     onChange={handlePhoneNumber} 
+                     placeholder="Enter Phone Number"
+                     style={{
+                            padding: '10px',
+                            fontSize: '18px',
+                            width: '250px',
+                            borderRadius: '5px',
+                            border: '1px solid #ccc',
+                            marginBottom: '10px',
+                        }}
+                  />
+            <div><button type="submit"
+            
+                            style={{
+                                padding: '10px 20px',
+                                fontSize: '18px',
+                                backgroundColor: '#e5c641',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '5px',
+                                cursor: 'pointer',}}>Submit</button></div>
+         </form>: <div>
+            <p  style={{ fontSize: '18px', marginBottom: '10px' }}>Enter Otp send to {phoneNumber}</p>
+            <OtpInput length={4} onOtpSubmit={onOtpSubmit}/>
+            </div>}
+      </div>;
+      
+      };
+
+      const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
+    const [otp, setOtp] = React.useState(new Array(length).fill(""));
+    const [generatedOtp, setGeneratedOtp] = React.useState(""); // State to store the generated OTP
+    const inputRefs = React.useRef([]);
+
+    // Focus on the first input field when the component mounts
+    React.useEffect(() => {
+        if (inputRefs.current[0]) {
+            inputRefs.current[0].focus();
+        }
+    }, []);
+
+    // Function to handle OTP input changes
+    const handleChange = (index, e) => {
+        const value = e.target.value;
+        if (isNaN(value)) return;
+
+        const newOtp = [...otp];
+        // Allow only one input
+        newOtp[index] = value.substring(value.length - 1);
+        setOtp(newOtp);
+
+        // Submit trigger
+        const combinedOtp = newOtp.join("");
+        if (combinedOtp.length === length) onOtpSubmit(combinedOtp);
+
+        // Move to the next input if the field is filled
+        if (value && index < length - 1 && inputRefs.current[index + 1]) {
+            inputRefs.current[index + 1].focus();
+        }
+    };
+
+    // Handle clicks on input fields
+    const handleClick = (index) => {
+        inputRefs.current[index].setSelectionRange(1, 1);
+
+        if (index > 0 && !otp[index - 1]) {
+            inputRefs.current[otp.indexOf("")].focus();
+        }
+    };
+
+    // Handle backspace to move to the previous input field
+    const handleKeyDown = (index, e) => {
+        if (
+            e.key === "Backspace" &&
+            !otp[index] &&
+            index > 0 &&
+            inputRefs.current[index - 1]
+        ) {
+            inputRefs.current[index - 1].focus();
+        }
+    };
+
+    // Generate and display OTP
+    const generateOtp = () => {
+        const otp = Math.floor(1000 + Math.random() * 9000).toString(); // Generate a 4-digit OTP
+        setGeneratedOtp(otp);
+        alert(`Your OTP is: ${otp}`); // Display OTP in an alert
+    };
+
+    // Handle OTP submission
+    const handleSubmit = () => {
+        const combinedOtp = otp.join("");
+        if (combinedOtp.length === length) {
+            if (combinedOtp === generatedOtp) {
+                onOtpSubmit(combinedOtp);
+                // Redirect to another HTML page
+                window.location.href = "your-page.html"; // Replace with your HTML page path
+            } else {
+                alert("Incorrect OTP. Please try again.");
+            }
+        } else {
+            alert("Please complete the OTP input.");
+        }
+    };
+
+    // Generate OTP when the component mounts
+    React.useEffect(() => {
+        generateOtp();
+    }, []); // Empty dependency array ensures this runs only once on mount
+
+    return (
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+            {otp.map((value, index) => (
+                <input
+                    key={index}
+                    type="text"
+                    ref={(input) => (inputRefs.current[index] = input)}
+                    value={value}
+                    onChange={(e) => handleChange(index, e)}
+                    onClick={() => handleClick(index)}
+                    onKeyDown={(e) => handleKeyDown(index, e)}
+                    className="otpInput"
+                    style={{
+                        width: '40px',
+                        height: '40px',
+                        fontSize: '24px',
+                        textAlign: 'center',
+                        borderRadius: '5px',
+                        border: '1px solid #ccc',
+                    }}
+                />
+            ))}
+            <div>
+                <button
+                    onClick={handleSubmit}
+                    className="submitButton"
+                    style={{
+                        padding: '10px 20px',
+                        fontSize: '18px',
+                        backgroundColor: '#e5c641',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        marginLeft: '10px',
+                    }}
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    );
+};
+
+
+      // When the "Log in with OTP" button is clicked
+      document.getElementById('otp-login').addEventListener('click', function() {
+         // Render the PhoneOtpForm component into the otp-container div
+         ReactDOM.render(<PhoneOtpForm />, document.getElementById('otp-container'));
+      });
+   </script>
+
+
+<!-- Include your phone-login component and OtpInput component as separate JSX scripts -->
+<!-- <script type="text/babel" src="phone-login.js"></script>
+<script type="text/babel" src="otp-input.js"></script> -->
+</body>
+</html>
