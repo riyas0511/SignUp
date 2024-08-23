@@ -132,7 +132,7 @@
          </div>
          <div id="login" class="tab-pane">
                <h1>Welcome Back</h1>
-               <form action="/" method="post">
+               <form action="/" method="post" id ="loginForm">
                   <div class="field-wrap">
                      <label for="email-or-phone">Email Address or Phone number</label>
                      <input type="text" id="email-or-phone" required>
@@ -142,7 +142,7 @@
                      <input type="password" id="login-password" required>
                   </div>
                   <p class="forget"><a href="#">Forget Password</a></p>
-                  <button class="button">Log In</button>
+                  <button type="button" class="button" onclick="login()">Log In</button>
                   <p><b id="opt"> OR</b></p>
                   <button type="button" class="button" id="otp-login">Log In with OTP</button>
                </form>
@@ -152,8 +152,28 @@
    <script src="engine.js"></script>
 
    <div id="otp-container"></div>
+    
+   <script type="text/javascript">
+    function login() {
+       var username = document.getElementById("email-or-phone").value;
+       var password = document.getElementById("login-password").value;
 
-<!-- Babel for JSX -->
+       
+       var user1 = { username: "rajuprasad@gmail.com", password: "pass1" };
+       var user2 = { username: "keshabyadav@gmail.com", password: "pass2" };
+
+       
+       if ((username === user1.username && password === user1.password) ||
+           (username === user2.username && password === user2.password)) {
+          alert("Login successful!");
+          
+          window.location.href = "/Farmer_LandingPage/index.html"; 
+       } else {
+          alert("Invalid username or password. Please try again.");
+       }
+    }
+ </script>
+
    <script type="text/babel">
       const PhoneOtpForm = () => {
          const [phoneNumber , setPhoneNumber] = React.useState("");
@@ -217,37 +237,37 @@
 
       const OtpInput = ({ length = 4, onOtpSubmit = () => {} }) => {
     const [otp, setOtp] = React.useState(new Array(length).fill(""));
-    const [generatedOtp, setGeneratedOtp] = React.useState(""); // State to store the generated OTP
+    const [generatedOtp, setGeneratedOtp] = React.useState(""); 
     const inputRefs = React.useRef([]);
 
-    // Focus on the first input field when the component mounts
+    
     React.useEffect(() => {
         if (inputRefs.current[0]) {
             inputRefs.current[0].focus();
         }
     }, []);
 
-    // Function to handle OTP input changes
+    
     const handleChange = (index, e) => {
         const value = e.target.value;
         if (isNaN(value)) return;
 
         const newOtp = [...otp];
-        // Allow only one input
+        
         newOtp[index] = value.substring(value.length - 1);
         setOtp(newOtp);
 
-        // Submit trigger
+        
         const combinedOtp = newOtp.join("");
         if (combinedOtp.length === length) onOtpSubmit(combinedOtp);
 
-        // Move to the next input if the field is filled
+        
         if (value && index < length - 1 && inputRefs.current[index + 1]) {
             inputRefs.current[index + 1].focus();
         }
     };
 
-    // Handle clicks on input fields
+    
     const handleClick = (index) => {
         inputRefs.current[index].setSelectionRange(1, 1);
 
@@ -256,7 +276,7 @@
         }
     };
 
-    // Handle backspace to move to the previous input field
+    
     const handleKeyDown = (index, e) => {
         if (
             e.key === "Backspace" &&
@@ -268,21 +288,21 @@
         }
     };
 
-    // Generate and display OTP
+    
     const generateOtp = () => {
-        const otp = Math.floor(1000 + Math.random() * 9000).toString(); // Generate a 4-digit OTP
+        const otp = Math.floor(1000 + Math.random() * 9000).toString(); 
         setGeneratedOtp(otp);
         alert(`Your OTP is: ${otp}`); // Display OTP in an alert
     };
 
-    // Handle OTP submission
+    
     const handleSubmit = () => {
         const combinedOtp = otp.join("");
         if (combinedOtp.length === length) {
             if (combinedOtp === generatedOtp) {
                 onOtpSubmit(combinedOtp);
-                // Redirect to another HTML page
-                window.location.href = "your-page.html"; // Replace with your HTML page path
+                
+                window.location.href = "/Farmer_LandingPage/index.html"; 
             } else {
                 alert("Incorrect OTP. Please try again.");
             }
@@ -341,16 +361,14 @@
 };
 
 
-      // When the "Log in with OTP" button is clicked
+      
       document.getElementById('otp-login').addEventListener('click', function() {
-         // Render the PhoneOtpForm component into the otp-container div
+        
          ReactDOM.render(<PhoneOtpForm />, document.getElementById('otp-container'));
       });
    </script>
 
 
-<!-- Include your phone-login component and OtpInput component as separate JSX scripts -->
-<!-- <script type="text/babel" src="phone-login.js"></script>
-<script type="text/babel" src="otp-input.js"></script> -->
+
 </body>
 </html>
